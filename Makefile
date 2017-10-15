@@ -14,5 +14,10 @@ install:
 		$(DESTDIR)$(INSTALLDIR)/xmb/flatui/src \
 		$(DESTDIR)$(INSTALLDIR)/xmb/dot-art/src
 
+install-xmb-monochrome:
+	mkdir -p $(DESTDIR)$(INSTALLDIR)/xmb/monochrome/
+	cp -ar ./xmb/monochrome/{font.ttf,png} \
+		$(DESTDIR)$(INSTALLDIR)/xmb/monochrome/
+
 test-install: all
 	DESTDIR=/tmp/build $(MAKE) install
